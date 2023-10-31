@@ -42,7 +42,6 @@ PUBG gained immense popularity shortly after its release, contributing to the ri
 Our goal is to analyze this dataset to figure out which specific factors or behaviors lead to more kills or longer game life, which leads to player wins.
 
 
-
 \lipsum[1-3]
 
 To cite a reference, here are examples.
@@ -65,15 +64,25 @@ A discussion concludes in Section~\ref{sec:disc}.
 \section{Data}
 \label{sec:data}
 
-Use this section to describe the data that helps to answer your research
-questions. Recall Einstein's equation
-\begin{equation}
-  \label{eq:mc2}
-  E = m c^2,
-\end{equation}
-which states that the energy $E$ of a particle in its rest frame as the product
-of mass ($m$) with the speed of light squared ($c^2$).
-\lipsum{1}
+Data from the PUBG Developer API, it  is a official game data. There are over 65,000 games recorded in this database.  
+
+Assists - 			Number of enemy players this player damaged that were killed by teammates.
+Boosts -          		Number of boost items used.
+Revives - 	     		Number of times this player revived teammates.
+Heals - 	     		Number of healing items used.
+Damage Dealt - 		Total damage dealt. Note: Self inflicted damage is subtracted.
+TeamKills - 		Number of times this player killed a teammate.
+Kill Place - 		Ranking in match of number of enemy players killed.
+kills - 			Number of enemy players killed.
+Ride Distance - 		Total distance traveled in vehicles measured in meters.
+Swim Distance - 	Total distance traveled by swimming measured in meters.
+Walk Distance - 	Total distance traveled on foot measured in meters.
+Weapons Acquired - 	Number of weapons picked up.
+Match Duration - 	Duration of match in seconds.
+Win Place Perc -  	This is a percentile winning placement, where 1 corresponds to 1st place, and 0 corresponds to last place in the match.
+
+
+
 
 \section{Methods}
 \label{sec:meth}
