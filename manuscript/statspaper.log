@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  31 OCT 2023 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  31 OCT 2023 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,14 +416,14 @@ Package hyperref Info: Link coloring ON on input line 24.
 
  [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-<cars.pdf, id=67, 433.62pt x 289.08pt>
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+<cars.pdf, id=57, 433.62pt x 289.08pt>
 File: cars.pdf Graphic file (type pdf)
 <use cars.pdf>
-Package pdftex.def Info: cars.pdf  used on input line 140.
+Package pdftex.def Info: cars.pdf  used on input line 126.
 (pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
- (./statspaper.bbl [5] [6 <./cars.pdf>])
-[7] (./statspaper.aux)
+ [4] [5 <./cars.pdf>] (./statspaper.bbl)
+[6] (./statspaper.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -432,26 +432,23 @@ Package rerunfilecheck Info: File `statspaper.out' has not changed.
 (rerunfilecheck)             Checksum: A2DA40BC6B073A49D78286FDB82EC60D;415.
  ) 
 Here is how much of TeX's memory you used:
- 10492 strings out of 474928
- 163358 string characters out of 5763562
+ 10486 strings out of 474928
+ 163218 string characters out of 5763562
  1929785 words of memory out of 5000000
- 31893 multiletter control sequences out of 15000+600000
+ 31889 multiletter control sequences out of 15000+600000
  565010 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,8n,93p,411b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,8n,93p,584b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/t
-exlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on statspaper.pdf (7 pages, 137417 bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti12.pfb>
+Output written on statspaper.pdf (6 pages, 101855 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
+ 113 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

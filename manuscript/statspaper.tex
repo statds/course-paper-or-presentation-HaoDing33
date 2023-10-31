@@ -87,21 +87,7 @@ Win Place Perc -  	This is a percentile winning placement, where 1 corresponds t
 \section{Methods}
 \label{sec:meth}
 
-Use this section to present the methodologies that will generate results by
-analyzing the data. Suppose that the radius of a circle is $r$. Then its area is
-\begin{equation}
-  \label{eq:area}
-  \pi r^2.
-\end{equation}
-
-Equation~\eqref{eq:area} is interesting. \lipsum[1-4]
-
-Sometimes I don't want an equation to be numbered such as this one:
-\[
-  f(x) = \frac{1}{\sqrt{2\pi}} \exp\left( - \frac{x^2}{2} \right),
-\]
-which is the density of a standard normal variable.
-
+Like we  said before,  correlation analysis, Feature importance from tree-based modes and recursive feature elimination are main method to select data to reduce the dataset size. Then, we split the data with training and testing sets. Choose appropriate machine learning models. Given that this is a predictive task with multiple features, ensemble methods like Random Forest or Gradient Boosting might be effective. Additionally, deep learning models like neural networks could be explored. we should train the chosen model using the training set.
 
 
 \section{Results}
@@ -116,7 +102,7 @@ Table~\ref{tab:rv} summarizes some example draws from some distributions.
 \centering
 \begin{tabular}{rrr}
   \toprule
-normal & poisson & gamma \\ 
+normal & Poisson & gamma \\ 
   \midrule
 -0.110 & 4 & 2.401 \\ 
   0.116 & 4 & 3.529 \\ 
@@ -132,7 +118,7 @@ normal & poisson & gamma \\
 \end{tabular}
 \end{table}
 
-Figure~\ref{fig:cars} shows the distance against the speed from this dataset.
+Figure~\ref{fig:cars} shows the distance against the speed from this datasets.
 
 
 \begin{figure}[tbp]
