@@ -25,7 +25,9 @@
 \maketitle
 
 \begin{abstract}
-Here is the abstract.  
+	
+This paper explores factors influencing player success in the popular online multiplayer battle royale game, PlayerUnknown's Battlegrounds (PUBG). Utilizing data from the PUBG Developer API, which includes information from over 65,000 recorded games, we employ correlation analysis, feature importance from tree-based models, and recursive feature elimination to identify key elements impacting player performance. The dataset encompasses various metrics such as assists, boosts, revives, damage dealt, team kills, kill place, distance traveled, weapons acquired, match duration, and win place percentile. Our analysis reveals correlations between different factors and highlights the significance of kills and walk distance in achieving better win placements. The methods section details the approach, including the use of ensemble models like Random Forest and Gradient Boosting, as well as deep learning models for predictive tasks. The discussion emphasizes the need for a large and diverse dataset, periodic model updates due to game dynamics, collaboration with PUBG experts, and the inherent unpredictability of player strategies. While machine learning models offer valuable insights, they should be interpreted cautiously, recognizing the game's dynamic nature and unpredictable elements.  
+
 \end{abstract}
 
 
@@ -41,16 +43,6 @@ PUBG gained immense popularity shortly after its release, contributing to the ri
 
 Our goal is to analyze this dataset to figure out which specific factors or behaviors lead to more kills or longer game life, which leads to player wins.
 
-
-\lipsum[1-3]
-
-To cite a reference, here are examples.
-\citet{xie2015dynamic} did something ... \lipsum[1]
-
-A lot of work has been done \citep[e.g.,][]{xie2015dynamic}.
-\lipsum[2]
-Some parametric bootstrap sample size approach was proposed by
-\citet{dwivedi2017analysis}. 
 
 
 % roadmap
@@ -89,17 +81,29 @@ Win Place Perc -  	This is a percentile winning placement, where 1 corresponds t
 
 Like we  said before,  correlation analysis, Feature importance from tree-based modes and recursive feature elimination are main method to select data to reduce the dataset size. Then, we split the data with training and testing sets. Choose appropriate machine learning models. Given that this is a predictive task with multiple features, ensemble methods like Random Forest or Gradient Boosting might be effective. Additionally, deep learning models like neural networks could be explored. we should train the chosen model using the training set.
 
-
-Figure~\ref{fig:Correlation} shows Correlation between each factors so that we can select the important factor. 
-
-
-
-\begin{figure}[tbp]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{Correlation.png}
 	\caption{The Correlation between each Factor}
 	\label{fig:Correlation}
 \end{figure}
+
+Figure~\ref{fig:Correlation} shows Correlation between each factors so that we can select the important factor. 
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\textwidth]{tree.png}
+	\caption{The Tree Method }
+	\label{fig:tree}
+\end{figure}
+
+
+Figure~\ref{fig:tree} shows Higher kills and more WalkDistance will  lead to better win placement. 
+
+
+
+
+
 
 
 \section{Discussion}
