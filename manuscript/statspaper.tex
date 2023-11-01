@@ -90,34 +90,6 @@ Win Place Perc -  	This is a percentile winning placement, where 1 corresponds t
 Like we  said before,  correlation analysis, Feature importance from tree-based modes and recursive feature elimination are main method to select data to reduce the dataset size. Then, we split the data with training and testing sets. Choose appropriate machine learning models. Given that this is a predictive task with multiple features, ensemble methods like Random Forest or Gradient Boosting might be effective. Additionally, deep learning models like neural networks could be explored. we should train the chosen model using the training set.
 
 
-\section{Results}
-\label{sec:resu}
-
-Table~\ref{tab:rv} summarizes some example draws from some distributions.
-\lipsum[1-4]
-
-\begin{table}[tbp]
-  \caption{This is my first table.}
-  \label{tab:rv}
-\centering
-\begin{tabular}{rrr}
-  \toprule
-normal & Poisson & gamma \\ 
-  \midrule
--0.110 & 4 & 2.401 \\ 
-  0.116 & 4 & 3.529 \\ 
-  -0.828 & 9 & 2.112 \\ 
-  -0.066 & 6 & 11.104 \\ 
-  0.219 & 3 & 4.815 \\ 
-  0.303 & 5 & 2.188 \\ 
-  0.544 & 0 & 8.050 \\ 
-  -2.617 & 8 & 3.646 \\ 
-  0.747 & 1 & 5.178 \\ 
-  -1.103 & 4 & 3.043 \\ 
-   \bottomrule
-\end{tabular}
-\end{table}
-
 Figure~\ref{fig:Correlation} shows Correlation between each factors so that we can select the important factor. 
 
 
@@ -142,12 +114,7 @@ If it is possible, we should work closely with PUBG experts to gain insights int
 Also we should emphasize a important factor, while machine learning models can provide valuable insights, predicting the outcome of a PUBG  involves various unpredictable factors, including player strategies, teamwork, and unexpected events during matches. Always interpret the model's predictions cautiously and use them as a supplementary tool rather than a definitive source for predicting winners.
 
 
-\begin{figure}[tbp]
-	\centering
-	\includegraphics[width=\textwidth]{Correlation.png}
-	\caption{The Correlation between each Factor}
-	\label{fig:Correlation}
-\end{figure}
+
 
 \bibliography{refs}
 \bibliographystyle{mcap}
