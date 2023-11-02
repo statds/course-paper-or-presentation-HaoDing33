@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  1 NOV 2023 01:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  2 NOV 2023 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -418,17 +418,17 @@ Package hyperref Info: Link coloring ON on input line 24.
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `sec:resu' on page 2 undefined on input line 52.
+LaTeX Warning: Reference `sec:resu' on page 2 undefined on input line 54.
 
 <Correlation.png, id=33, 432.11438pt x 335.00156pt>
 File: Correlation.png Graphic file (type png)
 <use Correlation.png>
-Package pdftex.def Info: Correlation.png  used on input line 86.
+Package pdftex.def Info: Correlation.png  used on input line 88.
 (pdftex.def)             Requested size: 469.75502pt x 364.19879pt.
 <tree.png, id=36, 477.28313pt x 304.13625pt>
 File: tree.png Graphic file (type png)
 <use tree.png>
-Package pdftex.def Info: tree.png  used on input line 95.
+Package pdftex.def Info: tree.png  used on input line 97.
 (pdftex.def)             Requested size: 469.75502pt x 299.33696pt.
 [2] (./statspaper.bbl [3 <./Correlation.png>]) [4 <./tree.png>]
 (./statspaper.aux)
@@ -445,22 +445,22 @@ Package rerunfilecheck Info: File `statspaper.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  10468 strings out of 474928
- 163074 string characters out of 5763562
+ 163058 string characters out of 5763562
  1929785 words of memory out of 5000000
  31881 multiletter control sequences out of 15000+600000
  561898 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,6n,93p,1333b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,6n,93p,1333b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on statspaper.pdf (4 pages, 191651 bytes).
+Output written on statspaper.pdf (4 pages, 193339 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  15 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
