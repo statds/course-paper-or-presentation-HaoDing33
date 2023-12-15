@@ -182,6 +182,21 @@ In addition to the initial preprocessing steps, the data was further manipulated
 
 This transformation was pivotal in simplifying the analysis, allowing subsequent models to predict a binary outcome of either winning or not winning, which is more aligned with common objectives in game outcome predictions.
 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Correlation.png} % 替换为图像的实际路径
+	\caption{Correlation matrix of PUBG gameplay variables.}
+	\label{fig:correlation_matrix}
+\end{figure}
+
+Figure \ref{fig:correlation_matrix} presents the correlation matrix of selected gameplay variables from the PUBG dataset. Each cell in the matrix provides the correlation coefficient between two variables, ranging from -1 to 1. A positive correlation (closer to 1) suggests a direct relationship, where an increase in one variable tends to be associated with an increase in the other. Conversely, a negative correlation (closer to -1) indicates an inverse relationship. Notably, the variables such as `kills` and `winPlacePerc` show a strong positive correlation, implying that higher kills are strongly associated with better placement in a match.
+
+
+
+
+
+
 \subsection{Model Selection}
 Considering the project's aim to predict player success in PUBG, both regression and classification models were deemed suitable. Initial models included decision trees to establish a baseline performance. To capture more complex relationships within the data, advanced models such as Least Absolute Shrinkage and Selection Operator(Lasso Regression), Specified Lasso, and Support Vector Machines (SVM) were also employed. These models were chosen for their ability to handle large datasets and provide insights into feature importance.
 
