@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  2 NOV 2023 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  15 DEC 2023 03:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -164,6 +164,9 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count278
 )
+(c:/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
 (c:/texlive/2023/texmf-dist/tex/latex/lipsum/lipsum.sty
 (c:/texlive/2023/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 (c:/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -324,24 +327,24 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./statspaper.aux)
 \openout1 = `statspaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -408,7 +411,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 24.
+Package hyperref Info: Link coloring ON on input line 27.
 
 (./statspaper.out) (./statspaper.out)
 \@outlinefile=\write3
@@ -418,19 +421,20 @@ Package hyperref Info: Link coloring ON on input line 24.
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `sec:resu' on page 2 undefined on input line 54.
+LaTeX Warning: Reference `sec:resu' on page 2 undefined on input line 59.
 
-<Correlation.png, id=33, 432.11438pt x 335.00156pt>
+[2]
+<Correlation.png, id=37, 432.11438pt x 335.00156pt>
 File: Correlation.png Graphic file (type png)
 <use Correlation.png>
-Package pdftex.def Info: Correlation.png  used on input line 88.
+Package pdftex.def Info: Correlation.png  used on input line 93.
 (pdftex.def)             Requested size: 469.75502pt x 364.19879pt.
-<tree.png, id=36, 477.28313pt x 304.13625pt>
+<tree.png, id=40, 477.28313pt x 304.13625pt>
 File: tree.png Graphic file (type png)
 <use tree.png>
-Package pdftex.def Info: tree.png  used on input line 97.
+Package pdftex.def Info: tree.png  used on input line 102.
 (pdftex.def)             Requested size: 469.75502pt x 299.33696pt.
-[2] (./statspaper.bbl [3 <./Correlation.png>]) [4 <./tree.png>]
+ [3] [4 <./Correlation.png>] (./statspaper.bbl [5 <./tree.png>]) [6]
 (./statspaper.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
@@ -444,23 +448,23 @@ Package rerunfilecheck Info: File `statspaper.out' has not changed.
 (rerunfilecheck)             Checksum: 33AE2462134182DB6D994B4B959FFA75;337.
  ) 
 Here is how much of TeX's memory you used:
- 10468 strings out of 474928
- 163058 string characters out of 5763562
- 1929785 words of memory out of 5000000
- 31881 multiletter control sequences out of 15000+600000
+ 10516 strings out of 474928
+ 164000 string characters out of 5763562
+ 1926785 words of memory out of 5000000
+ 31923 multiletter control sequences out of 15000+600000
  561898 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,6n,93p,1333b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,6n,93p,1333b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb>
-Output written on statspaper.pdf (4 pages, 193339 bytes).
+Output written on statspaper.pdf (6 pages, 193934 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
