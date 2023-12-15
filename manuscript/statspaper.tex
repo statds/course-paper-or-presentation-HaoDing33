@@ -185,7 +185,7 @@ This transformation was pivotal in simplifying the analysis, allowing subsequent
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Correlation.png} % 替换为图像的实际路径
+	\includegraphics[width=0.75\textwidth]{Correlation.png} 
 	\caption{Correlation matrix of PUBG gameplay variables.}
 	\label{fig:correlation_matrix}
 \end{figure}
@@ -199,6 +199,16 @@ Figure \ref{fig:correlation_matrix} presents the correlation matrix of selected 
 
 \subsection{Model Selection}
 Considering the project's aim to predict player success in PUBG, both regression and classification models were deemed suitable. Initial models included decision trees to establish a baseline performance. To capture more complex relationships within the data, advanced models such as Least Absolute Shrinkage and Selection Operator(Lasso Regression), Specified Lasso, and Support Vector Machines (SVM) were also employed. These models were chosen for their ability to handle large datasets and provide insights into feature importance.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{tree.png} 
+	\caption{Decision tree model based on PUBG gameplay variables.}
+	\label{fig:decision_tree}
+\end{figure}
+
+In our model training phase, we utilized a decision tree method, leveraging variables identified as significant from the correlation analysis. As illustrated in Figure \ref{fig:decision_tree}, the decision tree segregates players into groups based on `killPlace` and `walkDistance`. The tree structure indicates that `killPlace` is the most significant variable, initially splitting the players at a `killPlace` threshold of 44. Further splits are made based on additional thresholds of `killPlace` and `walkDistance`, highlighting their impact on the prediction of winning. Notably, `winPlacePerc` was not used as a predictor in this model. Instead, `win`, a binary outcome derived from `winPlacePerc`, was used to train the model, aligning with the objective to predict the likelihood of winning a match.
 
 
 \subsection{Model Training and Evaluation}

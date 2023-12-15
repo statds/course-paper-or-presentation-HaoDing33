@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  15 DEC 2023 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  15 DEC 2023 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,7 +480,13 @@ File: Correlation.png Graphic file (type png)
 <use Correlation.png>
 Package pdftex.def Info: Correlation.png  used on input line 188.
 (pdftex.def)             Requested size: 352.31625pt x 273.1491pt.
- [6] [7 <./Correlation.png>] [8] (./statspaper.bbl) [9] (./statspaper.aux)
+ [6] [7 <./Correlation.png>]
+<tree.png, id=118, 477.28313pt x 304.13625pt>
+File: tree.png Graphic file (type png)
+<use tree.png>
+Package pdftex.def Info: tree.png  used on input line 206.
+(pdftex.def)             Requested size: 469.75502pt x 299.33696pt.
+ [8 <./tree.png>] [9] (./statspaper.bbl) [10] (./statspaper.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -493,10 +499,10 @@ Package rerunfilecheck Info: File `statspaper.out' has not changed.
 (rerunfilecheck)             Checksum: 45588BE26B05967F5EE0E838F69F4891;1608.
  ) 
 Here is how much of TeX's memory you used:
- 12956 strings out of 474928
- 194961 string characters out of 5763562
+ 12966 strings out of 474928
+ 195099 string characters out of 5763562
  1938785 words of memory out of 5000000
- 34305 multiletter control sequences out of 15000+600000
+ 34313 multiletter control sequences out of 15000+600000
  566016 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,10n,93p,1333b,2647s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -508,10 +514,10 @@ st/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2023/texmf-dist/fonts
 lic/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb>
-Output written on statspaper.pdf (9 pages, 202660 bytes).
+Output written on statspaper.pdf (10 pages, 236742 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
