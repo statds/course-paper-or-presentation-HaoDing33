@@ -287,40 +287,7 @@ The cross-validation results provided an estimate of the models' performance on 
 \subsection{Model Training Code}
 The following R code snippet demonstrates the model training process for both Lasso and SVM models, highlighting the adjustments made due to the large size of the dataset:
 
-\begin{verbatim}
-	fitControl <- trainControl(
-	method = "cv",  
-	number = 5,    
-	summaryFunction = twoClassSummary,  
-	classProbs = TRUE,  
-	savePredictions = TRUE,  
-	verboseIter = TRUE,  
-	allowParallel = TRUE  
-	)
-	
-	# for Lasso 
-	set.seed(123)
-	lassoGrid <- expand.grid(alpha = 1, lambda = seq(0.001, 0.1, length = 10))  
-	lassoModel <- train(
-	win ~ .,  
-	data = small_train_selected,
-	method = "glmnet",
-	trControl = fitControl,
-	tuneGrid = lassoGrid,
-	metric = "ROC",
-	family = "binomial"
-	)
-	
-	# for SVM
-	set.seed(123)
-	svmModel <- train(
-	win ~ .,
-	data = small_train_selected,
-	method = "svmRadial",
-	trControl = fitControl,
-	metric = "ROC"
-	)
-\end{verbatim}
+
 
 
 \subsection{Adjustments for Large Dataset Size}
@@ -367,17 +334,29 @@ In conclusion, the choice between the Lasso Regression and SVM models should be 
 \section{Discussion}
 \label{sec:disc}
 
-We can choose several models, and compared with the accuracy of those models, and we will choose the highest accuracy model as our final model to predict whether the players or teams can win. So, we need to consider more detail for different modeling methods that will be lots of work.
-Second point is ensure that we have a sufficiently large and diverse dataset training a robust model.
-Since this is a video game, PUBG is a dynamic game with constant updates and changes. The model might need periodic updates to adapt to the evolving game environment.
-
-If it is possible, we should work closely with PUBG experts to gain insights into the specific dynamics of the game that may not be immediately evident from the data.
-
-Also we should emphasize a important factor, while machine learning models can provide valuable insights, predicting the outcome of a PUBG  involves various unpredictable factors, including player strategies, teamwork, and unexpected events during matches. Always interpret the model's predictions cautiously and use them as a supplementary tool rather than a definitive source for predicting winners.
 
 
+In this study, we explored various machine learning models, including Lasso Regression and Support Vector Machines (SVM), to predict the outcomes of PUBG matches. Our approach involved comparing the accuracy and ROC values of different models, ultimately selecting the one with the highest predictive performance. The SVM model, with its superior ROC value, emerged as the most effective tool for predicting match outcomes, indicating its robustness in handling the complex patterns inherent in the game data.
+
+However, model selection and training is just one aspect of developing a robust predictive system. A critical factor in this process is ensuring the use of a sufficiently large and diverse dataset. This not only enhances the model's accuracy but also its generalizability across different scenarios within the game. The dynamic nature of PUBG, characterized by frequent updates and gameplay changes, poses a unique challenge. It necessitates periodic model updates to adapt to new game mechanics and strategies, ensuring the model remains relevant and accurate over time.
+
+Collaboration with PUBG experts and enthusiasts could provide additional insights into game dynamics that are not immediately apparent from the data alone. Such expertise can guide the feature selection process and help in interpreting the model outputs more effectively.
+
+Furthermore, it's important to acknowledge the inherent unpredictability in a complex game like PUBG. Factors such as player strategies, teamwork dynamics, and unexpected in-game events play a significant role in determining match outcomes. While our machine learning models offer valuable insights and predictions, they should be viewed as supplementary tools that augment, rather than replace, human judgment and expertise. Over-reliance on model predictions without considering the nuanced and unpredictable nature of human gameplay can lead to oversimplified conclusions. Therefore, it's essential to interpret the results cautiously and consider them in conjunction with other information sources when making strategic decisions in the game.
+
+In conclusion, while our models provide a statistical edge in predicting match outcomes, the multifaceted nature of PUBG requires a balanced approach that combines data-driven insights with human expertise and adaptability to the evolving gameplay environment.
 
 
+
+
+
+\begin{thebibliography}{9}
+	\bibitem{kagglepubg} 
+	Kaggle. 
+	\textit{PUBG Finish Placement Prediction (Kernels Only)}. 
+	Available at: \url{https://www.kaggle.com/c/pubg-finish-placement-prediction/data}.
+	
+\end{thebibliography}
 
 
 
