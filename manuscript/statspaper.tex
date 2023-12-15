@@ -7,6 +7,7 @@
 \usepackage{booktabs}
 \usepackage{natbib}
 \usepackage{setspace}
+\usepackage{listings}
 
 % for space filling
 \usepackage{lipsum}
@@ -39,14 +40,13 @@ This paper explores factors influencing player success in the popular online mul
 \section{Introduction}
 \label{sec:intro}
 
-PUBG (PlayerUnknown's Battlegrounds). PUBG is a popular online multiplayer battle royale game developed and published by PUBG Corporation, a subsidiary of South Korean video game company Bluehole. It was inspired by the Japanese film "Battle Royale" and released in March 2017.
+PUBG (PlayerUnknown's Battlegrounds) represents a pivotal development in the gaming world, particularly within the rapidly growing eSports sector. This game, a brainchild of PUBG Corporation, a subsidiary of the South Korean company Bluehole, has not only garnered immense popularity but also significantly influenced the battle royale genre since its inception in March 2017. Its design, inspired by the Japanese film "Battle Royale", offers a unique blend of survival, exploration, and combat, making it a standout in the gaming community.
 
-In PUBG, up to 100 players parachute onto an island and scavenge for weapons and equipment to eliminate others while avoiding getting eliminated themselves. The game features a shrinking play area that forces players into closer proximity, creating intense encounters. The last player or team standing wins the match.
+The gameplay of PUBG is both engaging and complex. It drops up to 100 players onto an island where they must scavenge for weapons and equipment. The players then battle it out, with the play area gradually shrinking, forcing closer encounters and intensifying the game's pace. This innovative approach has not only attracted millions of players worldwide but also set new precedents for interactive and competitive gaming. As a result, PUBG has been a driving force behind the explosion of the battle royale genre, influencing numerous other games and becoming a staple in competitive gaming events like the PUBG Global Championship.
 
-PUBG gained immense popularity shortly after its release, contributing to the rise of the battle royale genre in gaming. The game is available on various platforms, including PC, Xbox, PlayStation, and mobile devices. PUBG Corporation has also organized esports events, such as the PUBG Global Championship, where professional players and teams compete for significant prizes
+In recent years, the intersection of data analytics and gaming has opened up new frontiers in understanding player behavior and game strategies. In competitive games like PUBG, where player decision-making and strategy are key, analyzing in-game data can yield insights into effective tactics, player tendencies, and overall game dynamics. This application of analytics is becoming increasingly crucial in the professional eSports arena, where understanding the nuances of player actions can give teams a competitive edge.
 
-
-Our goal is to analyze this dataset to figure out which specific factors or behaviors lead to more kills or longer game life, which leads to player wins.
+Our research focuses on leveraging this intersection of gaming and data analytics. By examining a comprehensive dataset from over 65,000 PUBG games, we aim to uncover the underlying factors that contribute to player success. Specifically, we are interested in identifying which behaviors and strategies lead to more kills or longer survival in the game, ultimately contributing to a player's or team's victory. This analysis not only has implications for player performance enhancement but also provides deeper insights into the strategic fabric of PUBG. Through this study, we hope to contribute to the growing body of knowledge in eSports analytics, offering both theoretical and practical insights into one of the most popular games in the modern gaming era.
 
 
 
@@ -63,49 +63,140 @@ A discussion concludes in Section~\ref{sec:disc}.
 \section{Data}
 \label{sec:data}
 
-Data from the PUBG Developer API, it  is a official game data. There are over 65,000 games recorded in this database.  
 
-Assists - 			Number of enemy players this player damaged that were killed by teammates.
-Boosts -          		Number of boost items used.
-Revives - 	     		Number of times this player revived teammates.
-Heals - 	     		Number of healing items used.
-Damage Dealt - 		Total damage dealt. Note: Self inflicted damage is subtracted.
-TeamKills - 		Number of times this player killed a teammate.
-Kill Place - 		Ranking in match of number of enemy players killed.
-kills - 			Number of enemy players killed.
-Ride Distance - 		Total distance traveled in vehicles measured in meters.
-Swim Distance - 	Total distance traveled by swimming measured in meters.
-Walk Distance - 	Total distance traveled on foot measured in meters.
-Weapons Acquired - 	Number of weapons picked up.
-Match Duration - 	Duration of match in seconds.
-Win Place Perc -  	This is a percentile winning placement, where 1 corresponds to 1st place, and 0 corresponds to last place in the match.
+
+Our dataset was sourced from the PUBG Finish Placement Prediction competition on Kaggle. This dataset includes a wide range of variables collected from actual PUBG games, offering a rich foundation for analyzing player behavior and game outcomes.
+
+\subsection{Sample Size and Representation}
+
+The dataset comprises data from over 65,000 PUBG matches, encompassing a diverse array of player skills and strategies. This extensive collection allows for a detailed examination of various factors influencing player success in PUBG. we can see in the table \ref{table:variables}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|p{10cm}|}
+		\hline
+		\textbf{Variable} & \textbf{Description} \\
+		\hline
+		Assists & Number of enemy players this player damaged that were killed by teammates. \\
+		\hline
+		Boosts & Number of boost items used. \\
+		\hline
+		Revives & Number of times this player revived teammates. \\
+		\hline
+		Heals & Number of healing items used. \\
+		\hline
+		Damage Dealt & Total damage dealt. Self inflicted damage is subtracted. \\
+		\hline
+		TeamKills & Number of times this player killed a teammate. \\
+		\hline
+		Kill Place & Ranking in match of number of enemy players killed. \\
+		\hline
+		Kills & Number of enemy players killed. \\
+		\hline
+		Ride Distance & Total distance traveled in vehicles measured in meters. \\
+		\hline
+		Swim Distance & Total distance traveled by swimming measured in meters. \\
+		\hline
+		Walk Distance & Total distance traveled on foot measured in meters. \\
+		\hline
+		Weapons Acquired & Number of weapons picked up. \\
+		\hline
+		Match Duration & Duration of match in seconds. \\
+		\hline
+		Win Place Perc & Percentile winning placement, where 1 corresponds to 1st place, and 0 to last place. \\
+		\hline
+	\end{tabular}
+	\caption{Description of Variables in the PUBG Dataset}
+	\label{table:variables}
+\end{table}
+
+
+\subsection{Data Processing}
+
+The data preprocessing was performed using R, employing a series of steps to ensure the integrity and suitability of the data for subsequent analysis. Initially, missing values within nominal predictors were handled by introducing a new level to represent novel categories, thus accounting for potential new factor levels that were not present during the training phase. For numeric predictors, missing values were imputed with the mean of the respective variables to preserve the dataset's integrity without introducing significant bias.
+
+Furthermore, numeric predictors were standardized, scaling each feature to have a mean of zero and a standard deviation of one. This normalization is a crucial step, especially when employing algorithms that assume data is centered and scaled, such as support vector machines or k-means clustering.
+
+The combined use of these preprocessing techniques ensures that the analysis is conducted on a dataset that is free from common issues that could undermine the validity of the results. Each step was carefully documented to maintain the reproducibility of the tudy.
+
+\begin{lstlisting}[language=R, caption={R code for data preprocessing}, label={lst:datapreprocessing}]
+	# Create the recipe
+	rec <- recipe(~., data = data) %>%
+	step_novel(all_nominal_predictors()) %>%
+	step_unknown(all_nominal_predictors()) %>%
+	step_impute_mean(all_numeric_predictors()) %>%
+	step_normalize(all_numeric_predictors())
+	
+	# Prepare and bake the recipe
+	prepped_data <- prep(rec, training = data)
+	data_transformed <- bake(prepped_data, new_data = NULL)
+\end{lstlisting}
+
+\subsection{Statistical Summary}
+
+A statistical summary is provided, showcasing the distribution and range of key variables such as damage dealt, distance traveled, and number of kills. This summary offers preliminary insights into general trends and patterns within PUBG gameplay.
+
+
+
+
+\begin{table}[h!]
+	
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		\textbf{Statistic} & \textbf{Damage Dealt} & \textbf{Ride Distance (meters)} & \textbf{Kills} \\ \hline
+		Minimum            & 0.00                  & 0.00                           & 0.0000         \\ \hline
+		1st Quartile       & 0.00                  & 0.00                           & 0.0000         \\ \hline
+		Median             & 84.16                 & 0.00                           & 0.0000         \\ \hline
+		Mean               & 129.74                & 590.99                         & 0.9184         \\ \hline
+		3rd Quartile       & 185.40                & 0.01                           & 1.0000         \\ \hline
+		Maximum            & 6229.00               & 40700.00                       & 58.0000        \\ \hline
+	\end{tabular}
+	\caption{Statistical Summary of Key Variables in PUBG Dataset}
+	\label{table:stats_summary}
+\end{table}
+
+In this table \ref{table:stats_summary}, three key variables (Damage Dealt, Ride Distance, and Kills) from the PUBG dataset. It is observed that while most players have a lower number of kills (median of 0), some players achieve a significantly high number of kills (maximum of 58). Similarly, although most players travel short distances by vehicles, some cover distances as long as 40,700 meters. These figures reflect the diverse player behaviors in PUBG gameplay.
+
+
 
 
 
 
 \section{Methods}
-\label{sec:meth}
 
-Like we  said before,  correlation analysis, Feature importance from tree-based modes and recursive feature elimination are main method to select data to reduce the dataset size. Then, we split the data with training and testing sets. Choose appropriate machine learning models. Given that this is a predictive task with multiple features, ensemble methods like Random Forest or Gradient Boosting might be effective. Additionally, deep learning models like neural networks could be explored. we should train the chosen model using the training set.
+\subsection{Data Preprocessing}
+Data preprocessing was a pivotal step in preparing the PUBG dataset for subsequent analysis. The process commenced with exploratory data analysis (EDA), which involved employing descriptive statistics and visualizations to unearth underlying trends, detect outliers, and observe patterns within the data. After EDA, we addressed missing values through appropriate imputation techniques, and feature engineering was undertaken to enhance the predictive capability of the dataset. This included encoding categorical variables and normalizing numerical variables to ensure uniformity.
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=\textwidth]{Correlation.png}
-	\caption{The Correlation between each Factor}
-	\label{fig:Correlation}
-\end{figure}
+A crucial part of preprocessing was the division of the dataset into training and testing sets. This split was essential for validating the model's performance and ensuring its ability to generalize to new, unseen data. Typically, a portion of the data (e.g., 70-80 percentage) was allocated to the training set, with the remainder reserved for testing.
 
-Figure~\ref{fig:Correlation} shows Correlation between each factors so that we can select the important factor. 
+Moreover, to refine the feature set and improve model efficiency, a correlation analysis was conducted. This analysis helped identify and eliminate highly correlated variables, thereby reducing dimensionality and potential multicollinearity issues. Variables with high correlation were evaluated, and those offering less informational value were selectively removed. This step was crucial to simplify the model, enhance interpretability, and potentially improve performance by focusing on the most relevant predictors.
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=\textwidth]{tree.png}
-	\caption{The Tree Method }
-	\label{fig:tree}
-\end{figure}
+In addition to the initial preprocessing steps, the data was further manipulated to facilitate a more straightforward interpretation of the results. Specifically, the continuous variable `winPlacePerc`, representing the percentile rank of a player's finish in a match, was transformed into a categorical factor with two levels: `defeat` and `win`. This dichotomy was established based on whether the player's rank was less than the top percentile (1), with the rationale that a victory can be considered as achieving the highest possible rank in a match. The code snippet below illustrates this transformation in R:
+
+\begin{lstlisting}[language=R, caption=Creating a binary outcome variable]
+	df3 <- df2 %>%
+	mutate(win = factor(winPlacePerc < 1, c(TRUE, FALSE), 
+	c("defeat", "win")))
+\end{lstlisting}
+
+This transformation was pivotal in simplifying the analysis, allowing subsequent models to predict a binary outcome of either winning or not winning, which is more aligned with common objectives in game outcome predictions.
+
+\subsection{Model Selection}
+Considering the project's aim to predict player success in PUBG, both regression and classification models were deemed suitable. Initial models included decision trees to establish a baseline performance. To capture more complex relationships within the data, advanced models such as Least Absolute Shrinkage and Selection Operator(Lasso Regression), Specified Lasso, and Support Vector Machines (SVM) were also employed. These models were chosen for their ability to handle large datasets and provide insights into feature importance.
 
 
-Figure~\ref{fig:tree} shows Higher kills and more WalkDistance will  lead to better win placement. 
+\subsection{Model Training and Evaluation}
+Models were trained using a split of the dataset into training and testing subsets, ensuring a robust validation process. Cross-validation techniques were applied to assess model performance and prevent overfitting. Model parameters were fine-tuned through a grid search approach, seeking the optimal combination for the highest predictive accuracy. The final model evaluation was based on metrics appropriate to the type of model — Mean Squared Error (MSE) for regression and accuracy, precision, and recall for classification models.
+
+
+\subsection{Interpretation of Results}
+The final step involved interpreting the model outcomes to draw meaningful conclusions about player behaviors and success factors in PUBG. The analysis of feature importance provided insights into which variables most significantly impacted player performance, guiding strategies for player improvement and game engagement.
+
+
+
+\section{Results}
+\label{sec:resu}
 
 
 
