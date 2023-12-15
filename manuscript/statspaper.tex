@@ -326,7 +326,11 @@ The following R code snippet demonstrates the model training process for both La
 \subsection{Adjustments for Large Dataset Size}
 Due to the large size of the dataset, several adjustments were made to optimize the training process:
 
+1. \textbf{Reduced Cross-Validation Folds}: The number of cross-validation folds was reduced to 5 (from the standard 10) to decrease the computational load and speed up the training process.
 
+2. \textbf{Parallel Processing}: The `allowParallel` parameter was set to `TRUE` in the `trainControl` function to enable parallel processing, taking advantage of multiple CPU cores to further expedite the model training.
+
+These adjustments were crucial in managing the large dataset and ensuring that the model training was both feasible and efficient.
 
 \section{Results}
 \label{sec:resu}
