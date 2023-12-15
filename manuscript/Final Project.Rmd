@@ -1,0 +1,207 @@
+---
+title: "Final Paper"
+output: pdf_document
+date: "2023-12-15"
+---
+
+
+
+
+```{r}
+library(tidyverse)
+library(recipes)
+library(dplyr)
+library(ggplot2)
+```
+
+
+# Load the data
+
+```{r}
+data <- read_csv("Dataset.csv")
+```
+```{r}
+head(data)
+```
+
+# Create the recipe
+
+```{r}
+rec <- recipe(~., data = data) %>%
+  step_novel(all_nominal_predictors()) %>%
+  step_unknown(all_nominal_predictors()) %>%
+  step_impute_mean(all_numeric_predictors()) %>%
+  step_normalize(all_numeric_predictors())
+```
+
+# Prepare and bake the recipe
+```{r}
+prepped_data <- prep(rec, training = data)
+data_transformed <- bake(prepped_data, new_data = NULL)
+```
+
+```{r}
+print(names(data_transformed))
+head(data_transformed)
+```
+```{r}
+data_transformed$win <- ifelse(data_transformed$winPlacePerc < 1, 'defeat', 'win')
+data_transformed$win <- factor(data_transformed$win)
+```
+
+```{r}
+basic_stats <- data %>% 
+  select(damageDealt, rideDistance, kills) %>%  
+  summary()
+
+print(basic_stats)
+
+
+ggplot(data, aes(x = kills)) +
+  geom_histogram(bins = 30, fill = "blue", alpha = 0.7) +
+  labs(title = "Damage Dealt Distribution",
+       x = "Damage Dealt",
+       y = "Frequency")
+```
+
+```{r}
+
+library(caret)
+
+
+
+
+set.seed(123)  
+index <- createDataPartition(data_transformed$winPlacePerc, p = 0.8, list = FALSE)
+train_data <- data_transformed[index, ]
+test_data <- data_transformed[-index, ]
+
+
+num_cols <- sapply(train_data, is.numeric)
+correlations <- cor(train_data[, num_cols])
+print(correlations)
+
+
+
+```
+
+
+
+```{r}
+selected_vars <- c("kills", "walkDistance", "boosts", "win","assists","damageDealt", "heals", "killPlace", "revives","rideDistance") 
+
+
+train_selected <- train_data[, selected_vars]
+test_selected <- test_data[, selected_vars]
+```
+
+```{r}
+set.seed(123)
+
+sample_size <- floor(nrow(train_selected) * 0.01)
+sampled_indices <- sample(seq_len(nrow(train_selected)), size = sample_size)
+
+
+small_train_selected <- train_selected[sampled_indices, ]
+
+
+```
+
+
+```{r}
+library(glmnet)
+
+
+X_small_train <- as.matrix(small_train_selected[, setdiff(names(small_train_selected), "win")])
+y_small_train <- small_train_selected$win
+
+
+cv_lasso <- cv.glmnet(X_small_train, y_small_train, alpha = 1, family = 'binomial')
+
+
+best_lambda <- cv_lasso$lambda.min
+
+lasso_best <- glmnet(X_small_train, y_small_train, alpha = 1, lambda = best_lambda, family = 'binomial')
+
+
+```
+
+
+```{r}
+library(e1071)
+
+
+small_train_selected <- na.omit(small_train_selected)
+
+
+if (nrow(small_train_selected) == 0) {
+  stop("No data available for training after removing missing values.")
+}
+
+
+X_small_train <- small_train_selected[, setdiff(names(small_train_selected), "win")]
+y_small_train <- small_train_selected$win
+
+
+y_small_train <- factor(y_small_train)
+
+
+svm_model <- svm(x = X_small_train, y = y_small_train, kernel = "radial")
+
+
+```
+
+```{r}
+library(caret)
+library(doParallel)
+
+registerDoParallel(cores = detectCores())
+
+fitControl <- trainControl(
+  method = "cv",  
+  number = 5,    
+  summaryFunction = twoClassSummary,  
+  classProbs = TRUE,  
+  savePredictions = TRUE,  
+  verboseIter = TRUE,  
+  allowParallel = TRUE  
+)
+
+# for Lasso 
+set.seed(123)
+lassoGrid <- expand.grid(alpha = 1, lambda = seq(0.001, 0.1, length = 10))  
+lassoModel <- train(
+  win ~ .,  
+  data = small_train_selected,
+  method = "glmnet",
+  trControl = fitControl,
+  tuneGrid = lassoGrid,
+  metric = "ROC",
+  family = "binomial"
+)
+
+# for SVM
+set.seed(123)
+svmModel <- train(
+  win ~ .,
+  data = small_train_selected,
+  method = "svmRadial",
+  trControl = fitControl,
+  metric = "ROC"
+)
+
+
+print(lassoModel)
+print(svmModel)
+
+
+print(lassoModel$bestTune)
+print(svmModel$bestTune)
+
+
+print(lassoModel$results)
+print(svmModel$results)
+```
+
+
+
