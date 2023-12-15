@@ -284,8 +284,47 @@ To ensure the robustness of the models, a 10-fold cross-validation was employed.
 The cross-validation results provided an estimate of the models' performance on unseen data and helped in mitigating overfitting, ensuring that the final models are generalizable to new data.
 
 
+\subsection{Model Training Code}
+The following R code snippet demonstrates the model training process for both Lasso and SVM models, highlighting the adjustments made due to the large size of the dataset:
+
+\begin{verbatim}
+	fitControl <- trainControl(
+	method = "cv",  
+	number = 5,    
+	summaryFunction = twoClassSummary,  
+	classProbs = TRUE,  
+	savePredictions = TRUE,  
+	verboseIter = TRUE,  
+	allowParallel = TRUE  
+	)
+	
+	# for Lasso 
+	set.seed(123)
+	lassoGrid <- expand.grid(alpha = 1, lambda = seq(0.001, 0.1, length = 10))  
+	lassoModel <- train(
+	win ~ .,  
+	data = small_train_selected,
+	method = "glmnet",
+	trControl = fitControl,
+	tuneGrid = lassoGrid,
+	metric = "ROC",
+	family = "binomial"
+	)
+	
+	# for SVM
+	set.seed(123)
+	svmModel <- train(
+	win ~ .,
+	data = small_train_selected,
+	method = "svmRadial",
+	trControl = fitControl,
+	metric = "ROC"
+	)
+\end{verbatim}
 
 
+\subsection{Adjustments for Large Dataset Size}
+Due to the large size of the dataset, several adjustments were made to optimize the training process:
 
 
 
