@@ -256,6 +256,9 @@ where $\alpha_i$ are the Lagrange multipliers, $k(\mathbf{x}_i, \mathbf{x}_j)$ i
 
 \section{Model Training and Evaluation}
 
+
+
+
 \subsection{Model Training}
 Model training involves fitting the selected machine learning algorithms to the training data to learn the patterns that can predict the target variable. In this study, three models were trained: Lasso Regression, Specified Lasso, and Support Vector Machines (SVM).
 
@@ -263,12 +266,17 @@ For the Lasso and Specified Lasso models, a grid search was performed to find th
 
 For the SVM model, both the kernel type and the regularization parameter \(C\) were optimized using cross-validation. The kernel transforms the data into a higher-dimensional space, while \(C\) controls the trade-off between maximizing the margin and minimizing the classification error.
 
+
+
+
 \subsection{Model Evaluation}
 The performance of each model was evaluated using a hold-out test set, which was not used during the training phase. The evaluation metrics included accuracy, precision, recall, and the F1 score for classification tasks, and the mean squared error (MSE) for regression tasks.
 
 A confusion matrix was also constructed for each classification model to provide a clear breakdown of true positives, false positives, true negatives, and false negatives.
 
 Additionally, Receiver Operating Characteristic (ROC) curves and Area Under the ROC Curve (AUC) were computed for models to assess their discriminative ability at various threshold settings.
+
+
 
 \subsection{Model Validation}
 To ensure the robustness of the models, a 10-fold cross-validation was employed. This method splits the training data into 10 subsets, where each subset is used as the test set while the other 9 subsets are used for training, and the process is repeated 10 times.
@@ -284,9 +292,32 @@ The cross-validation results provided an estimate of the models' performance on 
 \section{Results}
 \label{sec:resu}
 
+\begin{table}[ht]
+	\centering
+	\caption{Model Training and Validation Results}
+	\label{table:training_results}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Model} & \textbf{ROC Value} & \textbf{Optimal Parameters} \\
+		\hline
+		Lasso Regression & 0.9404 & $\lambda = 0.001$ \\
+		SVM & 0.9486 & $C = 1$, $\sigma = 0.4511$ \\
+		\hline
+	\end{tabular}
+\end{table}
 
+As illustrated in Table \ref{table:training_results}, the SVM model shows a slightly higher ROC value compared to the Lasso Regression model, indicating a better performance in classifying the 'win' and 'defeat' classes. The optimal hyperparameters were identified through cross-validation, with the Lasso Regression model having a lambda value of 0.001, and the SVM model using a C value of 1 and sigma value of 0.4511.
 
+\subsection{Evaluation Results}
+The evaluation results, as summarized in Table \ref{table:training_results}, indicate that both the Lasso Regression and SVM models achieved high ROC values, demonstrating strong predictive performance in distinguishing between the 'win' and 'defeat' classes in our dataset. The Lasso Regression model achieved a ROC value of 0.9404 with an optimal lambda parameter of 0.001. In contrast, the SVM model attained a slightly higher ROC value of 0.9486, with the optimal parameters being a C value of 1 and a sigma value of 0.4511.
 
+\subsection{Model Comparison}
+The SVM model outperformed the Lasso Regression model in terms of the ROC metric, albeit by a narrow margin. This suggests that the SVM model, with its ability to handle non-linear relationships and interactions between variables, might be more adept at capturing the complex patterns in the data. The higher ROC value of the SVM model indicates its superior ability to classify the outcomes correctly compared to the Lasso model.
+
+However, it is also important to consider the trade-offs between model complexity, interpretability, and performance. While the SVM model shows a slight edge in performance, Lasso Regression offers greater simplicity and interpretability. The Lasso model's ability to perform feature selection can provide valuable insights into which predictors are most influential in determining the outcome of a match.
+
+\subsection{Conclusion}
+In conclusion, the choice between the Lasso Regression and SVM models should be guided by the specific needs and constraints of the application. If the primary goal is predictive accuracy, the SVM model would be the preferable choice. However, if interpretability and understanding of the feature importance are crucial, the Lasso Regression model would be more appropriate. Ultimately, the decision should align with the project's objectives and the stakeholders' requirements.
 
 
 
