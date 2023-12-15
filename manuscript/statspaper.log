@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  15 DEC 2023 15:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.9)  15 DEC 2023 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,7 +486,7 @@ File: tree.png Graphic file (type png)
 <use tree.png>
 Package pdftex.def Info: tree.png  used on input line 206.
 (pdftex.def)             Requested size: 469.75502pt x 299.33696pt.
- [8 <./tree.png>] [9] [10] [11] (./statspaper.bbl [12]) [13] (./statspaper.aux)
+ [8 <./tree.png>] [9] [10] [11] [12] (./statspaper.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -499,10 +499,10 @@ Package rerunfilecheck Info: File `statspaper.out' has not changed.
 (rerunfilecheck)             Checksum: 5BF21F83FB72A05EF54FD2599E58EE96;2450.
  ) 
 Here is how much of TeX's memory you used:
- 12991 strings out of 474928
- 195426 string characters out of 5763562
+ 12971 strings out of 474928
+ 195018 string characters out of 5763562
  1938785 words of memory out of 5000000
- 34323 multiletter control sequences out of 15000+600000
+ 34311 multiletter control sequences out of 15000+600000
  566637 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,10n,93p,1333b,2647s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -521,10 +521,10 @@ type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx12
 00.pfb>
-Output written on statspaper.pdf (13 pages, 309256 bytes).
+Output written on statspaper.pdf (12 pages, 302813 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
+ 261 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
  155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
